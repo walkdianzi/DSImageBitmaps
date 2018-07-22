@@ -1,0 +1,16 @@
+PODS:
+  - DSImageBitmaps (0.0.1)
+
+DEPENDENCIES:
+  - DSImageBitmaps (from `../`)
+
+EXTERNAL SOURCES:
+  DSImageBitmaps:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DSImageBitmaps: de388f022cdb3e66497e414380c6aa2be1663e71
+
+PODFILE CHECKSUM: 339322ba0a3202afe64dae8d6097666a25e07a18
+
+COCOAPODS: 1.4.0

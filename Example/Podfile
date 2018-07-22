@@ -1,0 +1,5 @@
+
+target 'DSImageBitmaps' do
+  pod 'DSImageBitmaps', :path => '../'
+end
+ 
