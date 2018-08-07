@@ -16,6 +16,7 @@
 		13F1B55520FC785B00383750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F1B55420FC785B00383750 /* main.m */; };
 		13F1B56020FC7A3A00383750 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F1B55C20FC7A3A00383750 /* RootViewController.m */; };
 		13F1B56120FC7A3A00383750 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F1B55D20FC7A3A00383750 /* BaseViewController.m */; };
+		13F42C8A2119882000CB9B94 /* DSShowImageViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F42C892119882000CB9B94 /* DSShowImageViewcontroller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		13F1B55D20FC7A3A00383750 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		13F1B55E20FC7A3A00383750 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		13F1B55F20FC7A3A00383750 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		13F42C882119882000CB9B94 /* DSShowImageViewcontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSShowImageViewcontroller.h; sourceTree = "<group>"; };
+		13F42C892119882000CB9B94 /* DSShowImageViewcontroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSShowImageViewcontroller.m; sourceTree = "<group>"; };
 		46BD64DEEC80DEA352FCBA9C /* Pods-DSImageBitmaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSImageBitmaps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DSImageBitmaps/Pods-DSImageBitmaps.debug.xcconfig"; sourceTree = "<group>"; };
 		74077395134CECB6CF3C9258 /* libPods-DSImageBitmaps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSImageBitmaps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C69CDFC97CFDEEA32C62475 /* Pods-DSImageBitmaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSImageBitmaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-DSImageBitmaps/Pods-DSImageBitmaps.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				13F1B55020FC785B00383750 /* LaunchScreen.storyboard */,
 				13F1B55320FC785B00383750 /* Info.plist */,
 				13F1B55420FC785B00383750 /* main.m */,
+				13F42C882119882000CB9B94 /* DSShowImageViewcontroller.h */,
+				13F42C892119882000CB9B94 /* DSShowImageViewcontroller.m */,
 			);
 			path = DSImageBitmaps;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F42C8A2119882000CB9B94 /* DSShowImageViewcontroller.m in Sources */,
 				13F1B54A20FC785A00383750 /* ViewController.m in Sources */,
 				13F1B56120FC7A3A00383750 /* BaseViewController.m in Sources */,
 				13F1B55520FC785B00383750 /* main.m in Sources */,

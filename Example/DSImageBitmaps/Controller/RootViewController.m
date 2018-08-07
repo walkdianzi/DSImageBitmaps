@@ -8,6 +8,8 @@
 
 #import "RootViewController.h"
 #import "UIImage+ImageBitmaps.h"
+#import "DSShowImageViewcontroller.h"
+#import "UIImage+Resize.h"
 
 @interface RootViewController(){
     
@@ -28,15 +30,19 @@
                
                @"图片转换":@[
                                @10,
-                               @11
+                               @11,
+                               @12,
+                               @13
                                ]
              };
     
     _itemsName = @{
                    
                    @"图片转换":@[
-                                @"converRGBA8",
-                                @"converGray"
+                                @"10：converRGBA8",
+                                @"11：converGray",
+                                @"12：裁剪图片(切出上半部分)",
+                                @"13：缩放图片"
                            ]
                    };
     
@@ -96,6 +102,52 @@
                     NSLog(@"%@",bitmapsArr[y][x]);
                 }
             }
+        }
+            break;
+        case 12:{
+            UIImage *image = [UIImage imageNamed:@"apic23847"];
+            
+            //适配二三倍屏幕(CGImageGetWidth获取的就是实际像素大小)
+            CGImageRef imageRef = [image CGImage];
+            CGSize size = CGSizeMake(CGImageGetWidth(imageRef), CGImageGetHeight(imageRef));
+            NSLog(@"原像素大小：%@",[NSValue valueWithCGSize:size]);
+            
+            UIImage *image1 = [image croppedImageWithPixelRect:CGRectMake(0, 0, size.width, size.height/2)];
+            CGImageRef imageRef1 = [image1 CGImage];
+            CGSize size1 = CGSizeMake(CGImageGetWidth(imageRef1), CGImageGetHeight(imageRef1));
+            NSLog(@"按像素大小裁剪：%@，现像素大小：%@",[NSValue valueWithCGSize:CGSizeMake(size.width, size.height/2)],[NSValue valueWithCGSize:size1]);
+            
+            
+            UIImage *image2 = [image croppedImageWithRect:CGRectMake(0, 0, image.size.width, image.size.height/2)];
+            CGImageRef imageRef2 = [image2 CGImage];
+            CGSize size2 = CGSizeMake(CGImageGetWidth(imageRef), CGImageGetHeight(imageRef2));
+            NSLog(@"按图片大小裁剪：%@，现像素大小：%@",[NSValue valueWithCGSize:CGSizeMake(image.size.width, image.size.height/2)],[NSValue valueWithCGSize:size2]);
+            
+            DSShowImageViewcontroller *VC = [[DSShowImageViewcontroller alloc] init];
+            VC.showImage = image;
+            [self.navigationController pushViewController:VC animated:YES];
+        }
+            break;
+        case 13:{
+            UIImage *image = [UIImage imageNamed:@"apic23847"];
+            CGImageRef imageRef = [image CGImage];
+            CGSize size = CGSizeMake(CGImageGetWidth(imageRef), CGImageGetHeight(imageRef));
+            NSLog(@"%@",[NSValue valueWithCGSize:size]);
+            
+            //按照图片大小缩放
+            image = [image resizedImageToSize:CGSizeMake(325,508)];
+            CGImageRef imageRef2 = [image CGImage];
+            CGSize size2 = CGSizeMake(CGImageGetWidth(imageRef2), CGImageGetHeight(imageRef2));
+            NSLog(@"%@",[NSValue valueWithCGSize:size2]);
+            
+            //按照像素大小缩放
+            image = [image resizedImageToPixelSize:CGSizeMake(325,508)];
+            CGImageRef imageRef3 = [image CGImage];
+            CGSize size3 = CGSizeMake(CGImageGetWidth(imageRef3), CGImageGetHeight(imageRef3));
+            NSLog(@"%@",[NSValue valueWithCGSize:size3]);
+            DSShowImageViewcontroller *VC = [[DSShowImageViewcontroller alloc] init];
+            VC.showImage = image;
+            [self.navigationController pushViewController:VC animated:YES];
         }
             break;
         default:
